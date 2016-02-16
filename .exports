@@ -1,0 +1,38 @@
+# Make Atom the default editor, nobody needs vim or emacs
+export EDITOR="/usr/local/bin/atom -w";
+
+# Increase Bash history size. Allow 32³ entries; the default is 500.
+export HISTSIZE='32768';
+export HISTFILESIZE="${HISTSIZE}";
+# Omit duplicates and commands that begin with a space from history.
+export HISTCONTROL='ignoreboth';
+# Make some commands not show up in history
+export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+
+# Prefer German and use UTF-8.
+export LANG="de_DE.UTF-8";
+export LC_ALL="de_DE.UTF-8";
+
+# Manuals
+export MANPATH="/opt/local/share/man:$MANPATH"
+
+# Don’t clear the screen after quitting a manual page.
+export MANPAGER='less -X';
+
+# Highlight section titles in manual pages.
+export LESS_TERMCAP_md="${yellow}";
+
+# Use Node Version Manager
+export NODE_PATH="/usr/local/lib/node_modules"
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Enable persistent REPL history for `node`.
+export NODE_REPL_HISTORY=~/.node_history;
+# Allow 32³ entries; the default is 1000.
+export NODE_REPL_HISTORY_SIZE='32768';
+# Use sloppy mode by default, matching web browsers.
+export NODE_REPL_MODE='sloppy';
+
+# Make Python use UTF-8 encoding for output to stdin, stdout, and stderr.
+export PYTHONIOENCODING='UTF-8';
